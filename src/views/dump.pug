@@ -1,0 +1,9 @@
+doctype html
+
+html(lang='en')
+  body
+  h1 Requests
+  ul
+    each file in files
+      li
+        a(href=file.link)=file.name

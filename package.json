@@ -1,0 +1,77 @@
+{
+  "name": "requestdump",
+  "version": "0.0.1",
+  "description": "Dumps all requests and serves them as json documents to be viewed afterwards",
+  "main": "src/httprequestdump.js",
+  "scripts": {
+    "start": "node src/httprequestdump.js",
+    "app" : "nodemon src/httprequestdump.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "date-format": "^3.0.0",
+    "dateformat": "^5.0.1",
+    "express": "^4.17.1",
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.13",
+    "pug": "^3.0.2",
+    "serve-index": "^1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "husky": "^7.0.2",
+    "markdownlint-cli": "^0.28.1",
+    "semistandard": "16.0.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "commonjs": true,
+      "es6": true,
+      "node": true,
+      "mocha": true
+    },
+    "extends": [
+      "semistandard"
+    ],
+    "globals": {
+      "expect": "readonly",
+      "file": "readonly",
+      "dir": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
+    "rules": {
+      "comma-dangle": "off",
+      "max-len": [
+        "error",
+        {
+          "code": 120
+        }
+      ],
+      "indent": 2,
+      "quotes": [
+        2,
+        "single"
+      ],
+      "require-jsdoc": 0,
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "never",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
+  }
+}
